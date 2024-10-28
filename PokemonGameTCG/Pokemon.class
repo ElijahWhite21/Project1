@@ -1,0 +1,58 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Pokemon extends Card {
+   private int hp;
+   private List<Energy> attachedEnergies;
+   private String type;
+
+   public Pokemon(String var1, int var2, String var3) {
+      super(var1);
+      this.hp = var2;
+      this.attachedEnergies = new ArrayList();
+      this.type = var3;
+   }
+
+   public int getHp() {
+      return this.hp;
+   }
+
+   public void takeDamage(int var1) {
+      this.hp -= var1;
+      if (this.hp < 0) {
+         this.hp = 0;
+      }
+
+   }
+
+   public boolean isFainted() {
+      return this.hp <= 0;
+   }
+
+   public String getType() {
+      return this.type;
+   }
+
+   public void attachEnergy(Energy var1) {
+      this.attachedEnergies.add(var1);
+      PrintStream var10000 = System.out;
+      String var10001 = var1.getName();
+      var10000.println("Energy " + var10001 + " attached to " + this.getName());
+   }
+
+   public int getEnergyCount() {
+      return this.attachedEnergies.size();
+   }
+
+   public void attack(Pokemon var1) {
+      PrintStream var10000 = System.out;
+      String var10001 = this.getName();
+      var10000.println(var10001 + " attacks " + var1.getName() + "!");
+   }
+
+   public abstract void primaryAttack(Pokemon var1);
+
+   public abstract void secondaryAttack(Pokemon var1);
+}
