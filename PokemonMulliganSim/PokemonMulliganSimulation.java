@@ -58,6 +58,11 @@ public class PokemonMulliganSimulation {
                 deck.add("Energy"); // Add Energy cards to the deck
             }
 
+            // Add Trainer cards
+            for (int j = 0; j < 20; j++) {
+                deck.add("Trainer"); // Add Trainer cards to the deck
+            }
+
             // Shuffle the deck
             Collections.shuffle(deck); // Shuffle the deck to randomize the order
 
