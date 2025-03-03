@@ -8,17 +8,18 @@ public class BirthdayProgram {
      */
     public void runSimulation(int classSize, int numberOfRuns) {
 
-        int matchingBirthdaysCount = 0;
+        int matchingBirthdaysCount = 0; // Counter for matching birthdays
 
-        for (int i = 0; i < numberOfRuns; i++) {
-            if (hasSharedBirthday(classSize)) {
-                matchingBirthdaysCount++;
+        for (int i = 0; i < numberOfRuns; i++) { // Run simulation for number of runs
+            if (hasSharedBirthday(classSize)) { // Check if there are shared birthdays
+                matchingBirthdaysCount++; // Increment counter if shared birthdays are found
             }
         }
 
         // Calculate and displays probability of shared birthdays throughot the class
-        double probability = (double) matchingBirthdaysCount / numberOfRuns * 100;
-        System.out.println("Probability of someone in the class having the same birthday out of " + classSize
+        double probability = (double) matchingBirthdaysCount / numberOfRuns * 100; // Calculate probability
+        System.out.println("Probability of someone in the class having the same birthday out of " + classSize // Display
+                                                                                                              // probability
                 + " students: " + probability + "%");
     }
 
@@ -30,20 +31,20 @@ public class BirthdayProgram {
      */
     private boolean hasSharedBirthday(int classSize) {
 
-        Student[] people = new Student[classSize];
-        int[] birthdayTracker = new int[365];
+        Student[] people = new Student[classSize]; // Array of students
+        int[] birthdayTracker = new int[365]; // Array to track birthdays
 
         // Initialize student and count each birthday
-        for (int i = 0; i < classSize; i++) {
-            people[i] = new Student();
-            int birthday = people[i].getBirthday();
+        for (int i = 0; i < classSize; i++) { // Loop through each student
+            people[i] = new Student(); // Initialize student
+            int birthday = people[i].getBirthday(); // Get student's birthday
 
             // If birthday already exists in tracker, return true for a match
-            if (birthdayTracker[birthday - 1] > 0) {
-                return true;
+            if (birthdayTracker[birthday - 1] > 0) { // Check if birthday already exists
+                return true; // Return true if birthday already exists
             }
-            birthdayTracker[birthday - 1]++;
+            birthdayTracker[birthday - 1]++; // Increment birthday count
         }
-        return false;
+        return false; // Return false if no shared birthdays are found
     }
 }
