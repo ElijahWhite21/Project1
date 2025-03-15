@@ -1,9 +1,9 @@
 public class Arcanine extends Pokemon {
 
     public Arcanine() {
-        super("Arcanine", 130, "Fire");
-        setPrimaryAttack("Crunch", 30);
-        setSecondaryAttack("Fire Mane", 120);
+        super("Arcanine", 130, "Fire"); // Call the superclass constructor
+        setPrimaryAttack("Crunch", 30); // Set the primary attack
+        setSecondaryAttack("Fire Mane", 120); // Set the secondary attack
     }
 
     @Override
