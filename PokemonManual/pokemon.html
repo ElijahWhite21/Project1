@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon TCG Manual</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="poke.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pokémon TCG Manual</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#game-setup">Game Setup</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#game-actions">Game Actions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pokemon-cards">Pokémon Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#energy-cards">Energy Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#trainer-cards">Trainer Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#winning-game">Winning the Game</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+<!-- Overview Section -->
+<section id="overview" class="container mt-5">
+    <h2>Overview</h2>
+    <p>The Pokémon Trading Card Game (TCG) is a card game where players use Pokémon cards to battle against each other. Each player has a deck of 60 cards, which consists of Pokémon, Energy, and Trainer cards. The objective is to collect all prize cards by defeating the opponent's Pokémon. Players take turns drawing cards, playing Pokémon, attaching energy, and attacking.</p>
+</section>
+
+<!-- Game Setup Section -->
+<section id="game-setup" class="container mt-5">
+    <h2>Game Setup</h2>
+    <p><strong>Players:</strong> Two players participate in the game.</p>
+    <p><strong>Deck:</strong> Each deck consists of 60 cards (Pokémon, Energy, and Trainer cards).</p>
+    <p><strong>Prize Cards:</strong> Each player starts with 6 prize cards. The goal is to collect all prize cards by knocking out the opponent's Pokémon.</p>
+</section>
+
+<!-- Game Actions Section -->
+<section id="game-actions" class="container mt-5">
+    <h2>Game Actions</h2>
+        <p>Each turn consists of multiple actions that the player can choose from. The player can:</p>
+    <ul>
+        <li>View hand: Check the cards in your hand.</li>
+        <li>Play a Pokémon: Place a Pokémon from your hand onto your bench or active spot.</li>
+        <li>Play a Trainer card: Use a Trainer card that affects the game, like healing or drawing more cards.</li>
+        <li>Attach Energy to a Pokémon: Attach an energy card to an active or benched Pokémon.</li>
+        <li>Attack: Choose an attack for your active Pokémon to deal damage to the opponent's active Pokémon.</li>
+        <li>Retreat active Pokémon: Swap your active Pokémon with one from your bench.</li>
+        <li>End turn: End your turn after taking actions.</li>
+    </ul>
+</section>
+
+<!-- Pokémon Cards Section -->
+<section id="pokemon-cards" class="container mt-5">
+    <h2>Pokémon Cards</h2>
+        <p>Each Pokémon card has:</p>
+    <ul>
+        <li><strong>Name:</strong> The name of the Pokémon.</li>
+        <li><strong>HP:</strong> The health points of the Pokémon.</li>
+        <li><strong>Primary Attack:</strong> The main attack with associated damage.</li>
+        <li><strong>Secondary Attack:</strong> A secondary attack with higher damage or special effects.</li>
+    </ul>
+
+<!-- Button to open Charmander modal -->
+<h3 class="mt-4">Example Pokémon Card Below:</h3>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#charmanderModal">Charmander</button>
+    
+</section>
+
+<!-- Charmander Modal -->
+<section id="charmander-modal">
+<div class="modal fade" id="charmanderModal" tabindex="-1" aria-labelledby="charmanderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="charmanderModalLabel">Charmander</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Charmander.png" alt="Charmander Card" class="img-fluid mb-3 charmander-img">
+                <p><strong>Name:</strong> Charmander</p>
+                <p><strong>HP:</strong> 70</p>
+                <p><strong>Primary Attack:</strong> Ember (Damage: 40)</p>
+                <p><strong>Secondary Attack:</strong> N/A </p>
+                <p><strong>Ability:</strong> Blaze - Increases Fire-type move damage when HP is low.</p>
+                <p><strong>Weakness:</strong> Water (x2)</p>
+                <p><strong>Resistance:</strong> Fighting (-30)</p>
+                <p><strong>Retreat Cost:</strong> 1 Energy</p>
+                <p><em>From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.</em></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Energy Cards Section -->
+<section id="energy-cards" class="container mt-5">
+    <h2>Energy Cards</h2>
+        <p>Energy cards are used to power Pokémon attacks. Players can attach an energy to their Pokémon during their turn. Different types of Energy cards exist, such as Electric Energy, Water Energy, and Fire Energy.</p>
+</section>
+
+<!-- Trainer Cards Section -->
+<section id="trainer-cards" class="container mt-5">
+    <h2>Trainer Cards</h2>
+        <p>Trainer cards provide special effects like healing or searching your deck for specific cards. There are different types of Trainer cards:</p>
+    <ul>
+        <li><strong>Professor's Research:</strong> Allows you to draw additional cards.</li>
+        <li><strong>Boss's Orders:</strong> Switch your opponent's active Pokémon.</li>
+    </ul>
+</section>
+
+<!-- Winning the Game Section -->
+<section id="winning-game" class="container mt-5">
+    <h2>Winning the Game</h2>
+        <p>A player wins the game when they collect all 6 prize cards. A prize card is claimed when the opponent's Pokémon is knocked out.</p>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-light text-center py-4">
+    <p>&copy; 2025 Pokémon TCG Manual. All rights reserved.</p>
+</footer>
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
