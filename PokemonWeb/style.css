@@ -1,0 +1,290 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background-image: url('header-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+header .header-content {
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Game Board Layout */
+#game-board {
+    display: flex;
+    justify-content: space-evenly;  /* Adjusted to evenly space player areas */
+    width: 80%;  /* Limit game board width */
+    margin: 20px auto;
+}
+
+.player {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+/* Card Areas (Hand, Bench) */
+.card-area {
+    margin-top: 20px;
+}
+
+.bench-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    height: 100px;
+    overflow-x: auto;
+}
+
+.bench-area .card {
+    width: 100px;
+    height: 140px;
+    background-color: #fff;
+    border: 2px solid #000;
+    margin: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bench-area .card:hover {
+    background-color: #e0e0e0;
+}
+
+/* Buttons Styling */
+button {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Active Pokémon Box */
+.active-pokemon {
+    margin-top: 20px;
+    border: 2px solid #000;
+    padding: 10px;
+    width: 200px;
+    height: 300px;
+    margin: 20px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Stacked Trainer/Energy cards */
+.stacked-cards {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: -1; 
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Game Middle Section */
+#game-middle {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#battle-area {
+    border: 2px dashed #333;
+    height: 200px;
+    width: 100%;  
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Card Sliding Animation (For Pokémon Cards) */
+.card-slide {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: all 1s ease;
+    width: 100px; 
+    height: 140px; 
+    background-color: #fff;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card Stats Modal (Popup for Card Details) */
+.card-stats {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid #000;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    z-index: 2000;
+    width: 250px;
+}
+
+.card-stats h3 {
+    font-size: 20px;
+}
+
+.card-stats p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* For drag-and-drop */
+.card.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+/* Battle Area Drop Zones */
+#player1-battle, #player2-battle {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px dashed #000;
+}
+
+#player1-battle {
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.2); /* Player 1's side */
+}
+
+#player2-battle {
+    right: 0;
+    background-color: rgba(0, 0, 255, 0.2); /* Player 2's side */
+}
+
+/* Drag-and-Drop Restrictions */
+#player1-battle, #player2-battle {
+    border: 2px dashed #000;
+}
+
+/* Card Image Styling */
+.card img {
+    width: 100px;  
+    height: 140px;  
+    object-fit: cover;  
+}
+
+/* Adjust the card container to ensure consistent layout */
+
+#card-stats {
+    margin-top: 10px;
+}
+
+.card-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: #f2f2f2;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#card-image-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-top: 20px;
+    position: absolute;/* Position it absolutely in the center */
+    left: 50%;/* Center horizontally */
+    transform: translateX(-50%); /* Make sure it stays centered */
+    top: 40%;
+    z-index: 10; /* Make it appears above other content */
+}
+
+#card-image img {
+    width: 150px; 
+    height: 200px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    #game-board {
+        flex-direction: column; /* Stack player areas vertically on smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .player {
+        width: 100%; /* Full width for player areas */
+    }
+
+    .bench-area {
+        flex-direction: row; /* Ensure bench cards are in a row */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    .active-pokemon {
+        width: 80%; /* Adjust active Pokémon box width */
+    }
+}

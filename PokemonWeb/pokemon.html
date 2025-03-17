@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon TCG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark text-white p-4">
+        <div class="text-center">
+            <h1>Pokémon TCG Game</h1>
+            <p>Battle your opponent to collect all prize cards!</p>
+        </div>
+    </header>
+
+    <!-- Game Board -->
+    <div id="game-board" class="container">
+        <div class="row">
+            <!-- Player 1's side -->
+            <div id="player1" class="col-4">
+                <h2 class="text-center">Player 1</h2>
+                <div id="player1-hand" class="card-area mb-3"></div> <!-- Display cards here -->
+                <div id="player1-active" class="active-pokemon"></div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-success m-1" onclick="drawCard('player1')" id="btnPlayer1_drawCard">Draw Card</button>
+                    <button class="btn btn-primary m-1" onclick="playPokemon('player1')" id="btnPlayer1_playPokemon">Play Pokémon</button>
+                    <button class="btn btn-info m-1" onclick="choosePokemon('player1')" id="btnPlayer1_choosePokemon">Choose Pokémon</button>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="btn btn-danger m-1" onclick="attack('player1')">Attack</button>
+                    <button class="btn btn-warning m-1" onclick="retreat('player1')" id="btnPlayer1_retreatPokemon">Retreat</button>
+                </div>
+            </div>
+
+            <!-- Game board in the middle -->
+            <div id="game-middle" class="col-4 text-center">
+                <h2>Battle Area</h2>
+                <div id="battle-area" class=" hidden border p-3 mb-3">
+                    <!-- Where Pokémon attacks and interactions will be shown -->
+                </div>
+                <div id="card-info-container">
+                    <h3>Card Image</h3>
+                    <div id="card-image" class="mb-3"></div>
+                    <div id="card-stats"></div>
+                </div>
+                <button class="btn btn-success" onclick="startGame()">Start Game</button>
+            </div>
+
+            <!-- Player 2's side -->
+            <div id="player2" class="col-4">
+                <h2 class="text-center">Player 2</h2>
+                <div id="player2-hand" class="card-area mb-3"></div> <!-- Display cards here -->
+                <div id="player2-active" class="active-pokemon"></div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button class="btn btn-success m-1" onclick="drawCard('player2')" id="btnPlayer2_drawCard">Draw Card</button>
+                    <button class="btn btn-primary m-1" onclick="playPokemon('player2')" id="btnPlayer2_playPokemon">Play Pokémon</button>
+                    <button class="btn btn-info m-1" onclick="choosePokemon('player2')" id="btnPlayer2_choosePokemon">Choose Pokémon</button>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="btn btn-danger m-1" onclick="attack('player2')">Attack</button>
+                    <button class="btn btn-warning m-1" onclick="retreat('player2')" id="btnPlayer2_retreatPokemon">Retreat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to Show Card Image and Stats -->
+    <div id="card-image-container" class="hidden">
+        <div id="card-image"></div>
+        <div id="card-stats"></div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center p-2">
+        <p>&copy; 2025 Pokémon TCG - All Rights Reserved</p>
+    </footer>
+
+    <script src="gamelogic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
